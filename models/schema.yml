@@ -7,27 +7,22 @@ sources:
     tables:
       - name: sales
         identifier: raw_gz_sales
-        description: sales of greenweez/we have one row per products_id found in each orders_id
+        description: sales of greenweez/we have one row per products id found in each orders id
+        tests:
+          - unique:
+             column_name: "(orders_id || '_' || pdt_id)"
+      - name: product
+        identifier: raw_gz_product
         columns:
-          - name: date_date
-            description: the date of purchase
+          - name: products_id
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: ship
+        identifier: raw_gz_ship
+        columns:
           - name: orders_id
             tests:
               - unique
               - not_null
-      - name: product
-        identifier: raw_gz_product
-        columns: 
-          - name: products_id
-            description: primary key of the table
-            tests:
-             - unique
-             - not_null
-      - name: ship
-        identifier: raw_gz_ship
-        columns: 
-          - name: orders_id
-            tests:
-             - unique
-             - not_null
-                 
