@@ -26,3 +26,32 @@ sources:
             tests:
               - unique
               - not_null
+      - name: adwords
+        identifier: raw_gz_adwords
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: criteo
+        identifier: raw_gz_criteo
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: facebook
+        identifier: raw_gz_facebook
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+
